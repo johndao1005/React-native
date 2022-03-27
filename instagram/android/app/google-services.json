@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "616187244772",
+    "project_id": "react-native-e6a8f",
+    "storage_bucket": "react-native-e6a8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616187244772:android:fa8605f9a11a1394c23cf1",
+        "android_client_info": {
+          "package_name": "an.instagram.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616187244772-ssb0k01j2n50gggd1jodjk4bok0upa1t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1FBut6SzcgN-GX3ROa7n-pFBqQzZouSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "616187244772-ssb0k01j2n50gggd1jodjk4bok0upa1t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

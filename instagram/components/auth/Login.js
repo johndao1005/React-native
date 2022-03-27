@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { View, Button, TextInput } from 'react-native';
-import {auth,db} from '../../firebase.config'
+import {auth} from '../../firebase.config'
 import {
     createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    signOut
 } from 'firebase/auth'
+
 export class Login extends Component {
     constructor(props) {
         super(props);
@@ -16,10 +15,14 @@ export class Login extends Component {
         this.onSignup = this.onSignup.bind(this)
     }
     onSignup(){
-        const {email, password, name} = this.state;
+        const {email, password} = this.state;
         createUserWithEmailAndPassword(auth, email, password)
         .then((result)=>{
-            //db.collection('users').doc(result)
+            db.collection('users').doc(auth.currentUser.uid)
+            .set({
+                name,
+                email
+            })
             console.log(result);
         })
         .catch((err)=>{

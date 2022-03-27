@@ -3,6 +3,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyCE5PlZUK0I6FkZ-ito4pvjEGdoRS6YQjc",
   authDomain: "react-native-e6a8f.firebaseapp.com",
@@ -14,5 +15,5 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
-export const auth = getAuth (app);
+export const auth = getAuth (app); // added due to problem with storing on firestore
 export const db = getFirestore();

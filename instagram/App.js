@@ -20,7 +20,6 @@ class App extends Component {
     //ANCHOR call when component is mounted part of react lifecycle
 
     const unsub = onAuthStateChanged(auth,user=>{
-      console.log(user);
       if(!user){
         this.setState({
           loggedIn: false,
