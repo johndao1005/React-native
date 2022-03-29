@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:616187244772:android:fa8605f9a11a1394c23cf1",
+        "mobilesdk_app_id": "1:616187244772:android:f9c88bf700e054a0c23cf1",
         "android_client_info": {
-          "package_name": "an.instagram.app"
+          "package_name": "com.instagram"
         }
       },
       "oauth_client": [
@@ -29,6 +29,49 @@
             {
               "client_id": "616187244772-ssb0k01j2n50gggd1jodjk4bok0upa1t.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "616187244772-fgn8fm1kcb8gmbt98o8tuj0c15v7naot.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.instagram"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616187244772:android:b58c3ae5516d61f9c23cf1",
+        "android_client_info": {
+          "package_name": "com.instagram2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616187244772-ssb0k01j2n50gggd1jodjk4bok0upa1t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1FBut6SzcgN-GX3ROa7n-pFBqQzZouSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "616187244772-ssb0k01j2n50gggd1jodjk4bok0upa1t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "616187244772-fgn8fm1kcb8gmbt98o8tuj0c15v7naot.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.instagram"
+              }
             }
           ]
         }

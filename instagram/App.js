@@ -4,8 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LandingScreen from './components/auth/Landing';
 import {Register} from './components/auth/Register';
-import {  onAuthStateChanged } from "firebase/auth"
-import {auth} from './firebase.config'
+
 const Stack = createNativeStackNavigator();
 
 class App extends Component {
@@ -16,23 +15,10 @@ class App extends Component {
       loggedIn: false,
     }
   }
+  
   componentDidMount() {
     //ANCHOR call when component is mounted part of react lifecycle
 
-    const unsub = onAuthStateChanged(auth,user=>{
-      if(!user){
-        this.setState({
-          loggedIn: false,
-          loaded: true,
-        })
-      }else{
-        this.setState({
-          loggedIn: true,
-          loaded: true,
-        })
-      }
-      unsub()
-    })
   }
   
   render() {
@@ -53,12 +39,6 @@ class App extends Component {
           </Stack.Navigator>
         </NavigationContainer>
       );
-    // }
-    // return (
-    //   <View>
-    //     <Text>User is logged in</Text>
-    //   </View>
-    //)
   
   }
 }
