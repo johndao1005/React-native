@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { View, Button, TextInput } from 'react-native';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 export class Register extends Component {
     constructor(props) {
@@ -10,32 +12,83 @@ export class Register extends Component {
             name: '',
         }
         this.onSignup = this.onSignup.bind(this)
+        this.onSignout = this.onSignout.bind(this)
+        // this.onLogin = this.onLogin.bind(this)
     }
-    onSignup(){
-        const {email, password, name} = this.state;
-        
-        
+    onSignup() {
+        const { email, password, name } = this.state;
+        auth()
+            .createUserWithEmailAndPassword(email, password)
+            .then(() => {
+                console.log('User account created & signed in!');
+            })
+            .catch(error => {
+                if (error.code === 'auth/email-already-in-use') {
+                    console.log('That email address is already in use!');
+                }
+
+                if (error.code === 'auth/invalid-email') {
+                    console.log('That email address is invalid!');
+                }
+
+                console.error(error);
+            });
+            
+    
+        // save in firestore
+        firestore().collection('user').doc(auth().currentUser.uid).set({
+            email,
+            name
+        }).then(()=>{
+            console.log("save in Firestore")
+        }).catch(error=>{
+            console.log(error)
+        })
     }
+    onSignout (){
+
+        // const { email, password, name } = this.state;
+        // auth().signInWithEmailAndPassword(email,password)
+        // .then(() => {
+        //     console.log('User account igned in!');
+        // })
+        // .catch(error => {
+        //            console.error(error);
+        // });
+        
+        // auth().signOut().then(() => {
+        //         console.log('User account signout!');
+        //     })
+        //     .catch(error => {
+        //         console.error(error);
+        //     });
+    }
+    
     render() {
         return (
             <View>
                 <TextInput
                     placeholder="Name"
-                    onChangeText={(name) => this.setState({name})} />
+                    onChangeText={(name) => this.setState({ name })} />
                 <TextInput
                     placeholder="Email"
-                    onChangeText={(email) => this.setState({email})} />
+                    onChangeText={(email) => this.setState({ email })} />
                 <TextInput
                     placeholder="Password"
                     secureTextEntry={true}
-                    onChangeText={(password) => this.setState({password})} />
+                    onChangeText={(password) => this.setState({ password })} />
                 {/* <TextInput
                     placeholder="ConfirmPassword"
                     secureTextEntry={true}
                     onChangeText={(confirmPassword) => this.setState(confirmPassword)} /> */}
-                    <Button
+                <Button
                     onPress={() => this.onSignup()}
-                    title="Signup"/>
+                    title="Signup" />
+
+                <Button
+                    onPress={() => this.onSignout()}
+                    title="Sign out" />
+                
             </View>
         )
     }

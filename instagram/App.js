@@ -11,13 +11,13 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loaded: false,
+      loaded: true,
       loggedIn: false,
     }
   }
   componentDidMount() {
     //ANCHOR call when component is mounted part of react lifecycle
-
+    
   }
   
   render() {
