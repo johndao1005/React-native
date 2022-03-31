@@ -1,23 +1,23 @@
-import { Text, View, Button } from 'react-native'
+import { Text, View, Button , StyleSheet} from 'react-native'
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-
+//icon constant
 const homeIcon = <Icon name="home" size={25} color="black" />;
 const cameraIcon = <Icon name="camera" size={25} color="black" />;
 const userIcon = <Icon name="user-circle" size={25} color="black" />;
 
-import Feed from './main/Feed';
 
+//firebase api
 import auth from '@react-native-firebase/auth';
 
+//actions and other pages
 import { fetchUser } from '../redux/actions/index';
-import Add from './main/Add';
 import Profile from './main/Profile';
-import { Camera } from 'react-native-vision-camera';
+import Feed from './main/Feed';
 
 const Tab = createMaterialBottomTabNavigator()
 export class Main extends Component {
@@ -49,13 +49,13 @@ export class Main extends Component {
     }
     return (
       <Tab.Navigator initialRouteName="Feed"
-
                 labeled={false}
                 tabBarOptions={{
                     showIcon: true, showLabel: false, indicatorStyle: {
                         opacity: 0
                     }
                 }}
+
                 barStyle={{ backgroundColor: '#ffffff' }}>
                 <Tab.Screen key={Date.now()} name="Feed" component={Feed}
                     options={{
@@ -63,12 +63,8 @@ export class Main extends Component {
                           homeIcon
                         ),
                     }} />
-                <Tab.Screen key={Date.now()} name="Camera" component={Add} 
-                    options={{
-                        tabBarIcon: () => (
-                            cameraIcon   ),
-                    }} />
-              
+
+
                 <Tab.Screen name="Profile" component={Profile} 
                     // listeners={({ navigation }) => ({
                     //     tabPress: event => {
