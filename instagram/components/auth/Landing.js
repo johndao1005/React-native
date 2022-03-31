@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { Button, View } from 'react-native';
+import { Button, View } from 'react-native';    
 
 export default function Landing({navigation}) {
     return (

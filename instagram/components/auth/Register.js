@@ -3,7 +3,7 @@ import { View, Button, TextInput } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
-export class Register extends Component {
+export default class Register extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,7 +13,6 @@ export class Register extends Component {
         }
         this.onSignup = this.onSignup.bind(this)
         this.onSignout = this.onSignout.bind(this)
-        // this.onLogin = this.onLogin.bind(this)
     }
     onSignup() {
         const { email, password, name } = this.state;
@@ -21,6 +20,10 @@ export class Register extends Component {
             .createUserWithEmailAndPassword(email, password)
             .then(() => {
                 console.log('User account created & signed in!');
+                firestore().collection('user').doc(auth().currentUser.uid).set({
+                    email,
+                    name
+                })
             })
             .catch(error => {
                 if (error.code === 'auth/email-already-in-use') {
@@ -36,14 +39,14 @@ export class Register extends Component {
             
     
         // save in firestore
-        firestore().collection('user').doc(auth().currentUser.uid).set({
-            email,
-            name
-        }).then(()=>{
-            console.log("save in Firestore")
-        }).catch(error=>{
-            console.log(error)
-        })
+        // firestore().collection('user').doc(auth().currentUser.uid).set({
+        //     email,
+        //     name
+        // }).then(()=>{
+        //     console.log("save in Firestore")
+        // }).catch(error=>{
+        //     console.log(error)
+        // })
     }
     onSignout (){
 
