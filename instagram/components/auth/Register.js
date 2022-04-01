@@ -12,7 +12,7 @@ export default class Register extends Component {
             name: '',
         }
         this.onSignup = this.onSignup.bind(this)
-        this.onSignout = this.onSignout.bind(this)
+    
     }
     onSignup() {
         const { email, password, name } = this.state;
@@ -48,24 +48,6 @@ export default class Register extends Component {
         //     console.log(error)
         // })
     }
-    onSignout (){
-
-        // const { email, password, name } = this.state;
-        // auth().signInWithEmailAndPassword(email,password)
-        // .then(() => {
-        //     console.log('User account igned in!');
-        // })
-        // .catch(error => {
-        //            console.error(error);
-        // });
-        
-        // auth().signOut().then(() => {
-        //         console.log('User account signout!');
-        //     })
-        //     .catch(error => {
-        //         console.error(error);
-        //     });
-    }
     
     render() {
         return (
@@ -87,11 +69,6 @@ export default class Register extends Component {
                 <Button
                     onPress={() => this.onSignup()}
                     title="Signup" />
-
-                <Button
-                    onPress={() => this.onSignout()}
-                    title="Sign out" />
-                
             </View>
         )
     }

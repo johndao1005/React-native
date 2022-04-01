@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-//Icon.loadFont() // need this line for ios to read to icons
+Icon.loadFont() // need this line for ios to read to icons
 
 
 //icon constant
