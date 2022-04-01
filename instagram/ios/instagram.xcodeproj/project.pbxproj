@@ -13,8 +13,10 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		38D67EB96FC7D68326E7A0D2 /* libPods-instagram-instagramTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 756F83BCBF04F83613DD70AD /* libPods-instagram-instagramTests.a */; };
 		68F80BE027F5A6180072528E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68F80BDF27F5A6180072528E /* GoogleService-Info.plist */; };
+		766B165399D588F85329FD93 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878C520E5AB7911C80BB4B66 /* ExpoModulesProvider.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		940035EF62631DF71D1A6FCE /* libPods-instagram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8984BBFBC9795B912A6558 /* libPods-instagram.a */; };
+		A49641982D04CD2A5BF9A5EF /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C92F1EB0853C3E3E66B258 /* ExpoModulesProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		68F80BDF27F5A6180072528E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		756F83BCBF04F83613DD70AD /* libPods-instagram-instagramTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instagram-instagramTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = instagram/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		878C520E5AB7911C80BB4B66 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-instagram-instagramTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		93C92F1EB0853C3E3E66B258 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-instagram/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		BD39798796B4C55CD0FC9478 /* Pods-instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.debug.xcconfig"; path = "Target Support Files/Pods-instagram/Pods-instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		DA8984BBFBC9795B912A6558 /* libPods-instagram.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instagram.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -109,6 +113,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		424FEF7662F79CE204F88268 /* instagram */ = {
+			isa = PBXGroup;
+			children = (
+				93C92F1EB0853C3E3E66B258 /* ExpoModulesProvider.swift */,
+			);
+			name = instagram;
+			sourceTree = "<group>";
+		};
 		4C9E47AD39F9361AD5A6C06E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +130,14 @@
 				312C44C02D0AC77E1EA033F0 /* Pods-instagram-instagramTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		6BD8411E5820C008BD1B05FF /* instagramTests */ = {
+			isa = PBXGroup;
+			children = (
+				878C520E5AB7911C80BB4B66 /* ExpoModulesProvider.swift */,
+			);
+			name = instagramTests;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -136,6 +156,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				4C9E47AD39F9361AD5A6C06E /* Pods */,
+				CED9D7B7791FC71698121E1C /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -149,6 +170,15 @@
 				00E356EE1AD99517003FC87E /* instagramTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CED9D7B7791FC71698121E1C /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				424FEF7662F79CE204F88268 /* instagram */,
+				6BD8411E5820C008BD1B05FF /* instagramTests */,
+			);
+			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E356F31AD99517003FC87E /* instagramTests.m in Sources */,
+				766B165399D588F85329FD93 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +461,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				A49641982D04CD2A5BF9A5EF /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +486,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = instagramTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,7 +510,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = instagramTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -594,7 +626,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -652,7 +684,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",

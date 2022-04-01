@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Platform,Text, StyleSheet, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Provider } from 'react-redux';
@@ -7,15 +7,20 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './redux/reducers';
 import thunk from 'redux-thunk';
 import auth from '@react-native-firebase/auth';
-
-const store = createStore(rootReducer, applyMiddleware(thunk));
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 import LandingScreen from './components/auth/Landing';
 import Register from './components/auth/Register';
 import Main from './components/Main';
 
 const Stack = createNativeStackNavigator();
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
+//fix font awesome not imported in ios
+import Icon from 'react-native-vector-icons/MaterialIcons'
+
+Icon.loadFont('FontAwesome');
+
+//Start the app
 class App extends Component {
   constructor(props) {
     super(props);
@@ -64,14 +69,23 @@ class App extends Component {
     }
     return (
       <Provider store={store}>
-        <NavigationContainer>
-          <Stack.Navigator initialRouteName='Main'>
-            <Stack.Screen name='Main' component={Main} options={{ headerShown: false }} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </Provider>)
+
+          <NavigationContainer>
+            <Stack.Navigator initialRouteName='Main'>
+              <Stack.Screen name='Main' component={Main} options={{ headerShown: false }} />
+            </Stack.Navigator>
+          </NavigationContainer>
+      </Provider>
+      )
   }
 }
 
+StyleSheet.create({
+  iosSafeArea: {
+    flex: 1,
+    backgroundColor: "white",
+    paddingTop: Platform.OS === "ios" ? StatusBar.currentHeight : 0
+  }
+});
 
 export default App;
